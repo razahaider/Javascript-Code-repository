@@ -1,0 +1,28 @@
+---------NPM----------
+
+-NPM library online contains modules to be sed in our code
+- during build process modules are bundled
+--> babel(transpile/polyfil)
+ -> converted to ES5 code for execution
+ 
+
+ ---------Modules-------
+
+import {abc} from './dom.js"                            dom.js----
+                                                        |
+                                                        | export abc
+
+-modules are donloaded asynchronously
+-modules are imported synchronously
+-imports are simply pointers to the modules exported,
+-imported modules will reflect changes any made within modules
+Exports from modules:-
+- export const addtoCart = ()=>{...}
+- export default const browseProduct = ()=>{...}
+- export {addtoCart, browseProduct as bP}
+-export.addtoCart = function(){...} => const {addToCart} = require(...)
+-default exports are exports where we can give any name to import
+
+-module bundler - Parcel
+
+-

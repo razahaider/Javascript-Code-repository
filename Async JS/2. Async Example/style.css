@@ -1,0 +1,66 @@
+.country {
+    display: inline-block;
+    width: 300px;
+    height: 450px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 2px 2px 5px #ccc;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.country_img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.country_data {
+    padding: 20px;
+    height: 1000px;
+}
+
+.country_name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.country_region {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.country_row {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.country_row span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.neighbour-country::before {
+    position: relative;
+    display: block;
+    content: "Neighbour Country";
+    padding-left: 100px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(70, 70, 70)
+}
+
+.countries-container {
+    display: inline-block;
+}
+
+
+/*to display each card side by side*/

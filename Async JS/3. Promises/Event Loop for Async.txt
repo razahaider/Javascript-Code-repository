@@ -1,0 +1,67 @@
+-JS code executes within JS Engine
+
+-JS Engine is inside browser
+
+
+-browser-- -- > has-- - > URL, localstorage, js enginer, timout
+    -within JS Engine we have heap and call stack
+    -other than JS engine we have 1.'Web APIs environment' & 2.'Callback Queue'
+
+>>>
+Eventloop does
+ 1. checks callback queue if its empty
+  2. monitors Callback queue for any callback to be moved to Call Stack
+<<<
+
+CALLSTACK - all code executes here
+Call stack has Global Execution Context - all code executes line by line
+
+for a fN-- - > Execution context is created-- - > pushed inside Callstack-- > gets executed and removed from CS
+-- -- > no more code-- - > GEC pushed out of CS
+
+>Web APIs environment<   
+---> setTimeout(), localStorage, console, url, fetch(), DOM APIs(like document.querySelector)
+
+when we are using these webAPIs they are pushed to callstack for execution but via CBQ and Event Loop
+
+EXAMPLES>>>>>
+
+1. setTimeout(...cb, 5000) -- - > after timer expires cb is pushed in callback queue-- - > then pushed to CS and executes callback function
+
+whereas
+
+2. console.log() -- - > directly pushed to CS
+
+
+3. document.querySelector('.cls')
+    .addEventListener("click", () => {
+        console.log("callback call")
+    })
+
+here when user 'clicks'   
+        ----> callback() => goes inside callbackqueue
+        ----> eventLoop pushes this inside CS
+if CS is empty
+.........as many 'clicks'
+as many times callback fns pushed within CBQ............
+
+
+
+4. fetch() 
+--> when promise returned from externl API
+
+--> .then() has callback function
+
+--> cb fn goes inside Microtask queue(higher priority than CBQ)
+
+--> event loop checks
+
+if CS is empty
+--> checks MicroTQ and pushes to CS
+--> then checks CBQ for any CB to be pushed in CS for execution
+
+
+
+>starvation<
+becos of MicrotaskQ sometimes fns in CBQ stay
+for long long time so starvation concept also occurs

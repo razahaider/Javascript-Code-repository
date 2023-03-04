@@ -1,0 +1,132 @@
+/* set a background color for the whole page */
+
+html {
+  min-height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgb(128, 2, 2),
+    rgb(255, 137, 137)
+  ) !important;
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* style the main container */
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  position: relative;
+}
+
+/* style player 1 */
+
+.player-1 {
+  background-color: #ffd8d8;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 50%;
+  z-index: 1;
+}
+
+/* style player 2 */
+
+.player-2 {
+  background-color: #ffd8d8;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 50%;
+  z-index: 1;
+}
+
+/* style player names */
+
+.player-1 .player.Name,
+.player-2 .player.Name {
+  font-size: 2em;
+  color: rgb(129, 0, 0);
+  margin-bottom: 10px;
+}
+
+/* style player scores */
+
+.player-1 .player-1-score,
+.player-2 .player-2-score {
+  font-size: 4em;
+  color: rgb(129, 0, 0);
+}
+
+/* style current score */
+
+.current-score {
+  padding: 20px;
+  border-radius: 10px;
+  background: #b54559;
+  margin-left: 25%;
+  margin-top: 20px;
+  width: 50%;
+  z-index: 1;
+  color: white;
+}
+
+.current-score .current,
+.current-score .score {
+  font-size: 1.5em;
+  margin: 5px;
+}
+
+/* style buttons */
+
+button {
+  width: 180px;
+  font-size: 1.5em;
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.new-game {
+  top: 10%;
+}
+
+.Roll-Dice {
+  top: 70%;
+}
+
+.Hold {
+  top: 85%;
+}
+
+button:hover {
+  background-color: #343a40;
+  cursor: pointer;
+}
+
+.btn-container {
+  margin-right: 220px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* media query to stack player divs and current score div in small screens */
+
+img {
+  width: 120px;
+  position: absolute;
+  margin-bottom: 30px;
+}
